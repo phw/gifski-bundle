@@ -3,7 +3,7 @@
 set -e
 
 cd $(dirname $0)
-rm -rf gifski/
+rm -rf build/
 mkdir build
 pushd build
 
