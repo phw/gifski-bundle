@@ -15,7 +15,7 @@ pushd gifski
 git checkout $GIFSKI_VERSION
 mkdir -p .cargo
 touch .cargo/config
-cargo vendor --respect-source-config >> .cargo/config
+cargo vendor -vv --respect-source-config >> .cargo/config
 popd
 
 mkdir artifacts
