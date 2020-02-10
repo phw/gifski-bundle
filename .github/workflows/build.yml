@@ -11,10 +11,9 @@ jobs:
       GIFSKI_VERSION: 0.10.2
     steps:
       - uses: actions/checkout@v1
-      - name: Install dependencies
+      - name: Update rust
         run: |
-          sudo apt-get update
-          sudo apt-get install libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev libavresample-dev libpostproc-dev libswresample-dev libswscale-dev
+          rustup update
       - name: Build
         run: |
           ./build-bundle.sh
