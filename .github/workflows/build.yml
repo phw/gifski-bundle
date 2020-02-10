@@ -22,7 +22,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/git')
+    if: startsWith(github.ref, 'refs/tags/')
     needs:
       - build-bundle
     steps:
