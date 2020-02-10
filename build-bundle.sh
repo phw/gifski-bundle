@@ -8,6 +8,7 @@ pushd build
 git clone https://github.com/ImageOptim/gifski.git
 
 pushd gifski
+git checkout $GIFSKI_VERSION
 mkdir -p .cargo
 touch .cargo/config
 cargo vendor --respect-source-config >> .cargo/config
@@ -15,4 +16,4 @@ popd
 
 mkdir artifacts
 rm -rf gifski/.git
-tar cJvf artifacts/gifski-bundle.tar.xz gifski
+tar cJvf artifacts/gifski-bundle-$GIFSKI_VERSION.tar.xz gifski
