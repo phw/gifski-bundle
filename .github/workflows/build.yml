@@ -1,0 +1,19 @@
+name: Build gifski vendor bundle
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: |
+          ./build-bundle.sh
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: gifski-bundle
+          path: build/artifacts/
