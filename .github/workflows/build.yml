@@ -17,3 +17,20 @@ jobs:
         with:
           name: gifski-bundle
           path: build/artifacts/
+
+  release:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    needs:
+      - build-bundle
+    steps:
+      - uses: actions/download-artifact@v1
+        with:
+          name: gifski-bundle
+          path: artifacts/
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/gifski-bundle/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
