@@ -8,7 +8,7 @@ jobs:
   build-bundle:
     runs-on: ubuntu-latest
     env:
-      GIFSKI_VERSION: 0.10.2
+      GIFSKI_VERSION: 1.5.0
     steps:
       - uses: actions/checkout@v1
       - name: Build
